@@ -1,0 +1,396 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript Assignment</title>
+    <style>
+     *{
+         box-sizing:border-box,;
+     }
+     body{
+         height:1024px;
+         width:100%;
+         padding-left:250px;
+         padding-right:250px;
+         box-sizing:border-box;
+     }
+        div {
+            background-color: aqua;
+            height: auto;
+            width: 100%;
+            position: center;
+            border: solid;
+            border-color: crimson;
+            border-width: 5px;
+            padding-left: 30px;
+            box-sizing:border-box;
+
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center">JavaScript Assignment</h1>
+    <!-- 1 -->
+    <div>
+        <h1>1.</h1>
+        <p>JavaScript Clock</p>
+        <p id="current_date"></p>
+    </div>
+
+    <!-- 2 -->
+    <div>
+        <h1>2.</h1>
+        <p>Leap year Calendar</p>
+        <p style="display: inline">Entera year you wish to check for leap year:</p>
+        <input id="input_year" type="number" name="lYear" />
+        <input type="button" onclick="leapyear()" value="submit" />
+        <p id="isleapyear"></p>
+    </div>
+
+    <!-- 3-->
+    <div>
+        <h1>3.</h1>
+        <p id="checkForSunday" style="display:inline">Enter a Year:</p>
+        <input id="enteredYear" type="number" name="Year_check_Sunday" value="2020" />
+        <input type="button" onclick="isSunday()" value="Submit" />
+        <p id="disply_is_Sunday"></p>
+    </div>
+
+    <!--4-->
+    <div>
+        <h1>4.</h1>
+        <p style="display:inline">Guess a number to check:</p>
+        <input id="entered_guess_number" type="number" min="1" max="10" />
+        <input type="button" onclick="isNumber_Guess()" value="Submit" />
+        <p>Generated Random number between 1 and 10 is : <span id="display_random" style="background-color:cadetblue"></span> </p>
+        <p id="display_guess" style="color:maroon; font-style:italic"></p>
+    </div>
+
+    <!--5-->
+    <div>
+        <h1>5.</h1>
+        <p>Number of days until Christmas are : <span id="daysUntilChristmas"></span> days</p>
+    </div>
+    <!--6-->
+    <div>
+        <h1>6.</h1>
+        <p style="display:inline"> Enter a string to make it reverse : </p>
+        <input id="entered_String" type="text" name="a_string" value="Enter a string" />
+        <input type="button" onclick="reverseSting()" value="Submit" />
+        <p id="displyReversesString"></p>
+    </div>
+
+    <!--7-->
+    <div>
+        <h1>7.</h1>
+        <p style="display:inline"> Enter a TEXT to get combinations : </p>
+        <input id="entered_combi" type="text" name="Text_string" value="text" />
+        <input type="button" onclick="TextCombinations()" value="Submit" />
+        <p id="displyCombinations"></p>
+    </div>
+    <!--8-->
+    <div>
+        <h1>8.</h1>
+        <p style="display:inline"> Enter a Word : </p>
+        <input id="entered_word" type="text" value="word" />
+        <input type="button" onclick="WordSort()" value="Submit" />
+        <p id="displayWord"></p>
+    </div>
+
+    <!--9-->
+    <div>
+        <h1>9.</h1>
+        <p style="display:inline"> Enter a sentence to convert first letter of every word in the sentence to Uppercase: </p>
+        <input id="entered_sentence" type="text" value="" />
+        <input type="button" onclick="manuplateSentence()" value="Submit" />
+        <p id="displaySentence"></p>
+    </div>
+
+
+    <!--//10-->
+    <!--//11-->
+    <div>
+        <h1>11.</h1>
+        <p style="display:inline"> Enter a string : </p>
+        <input id="entered_text" />
+        <input type="button" onclick="FindTheType()" value="Submit" />
+        <p>Please,Check for the solution in Console</p>
+        <p id="displayTheType"></p>
+    </div>
+
+    <!--12-->
+    <div>
+        <h1>12.</h1>
+        <p style="display:inline"> <b>Separate numbers into Even and Odd using Loops and IF statement:</b></p>
+        <p id="displayloop"></p>
+    </div>
+
+    <!--14-->
+    <!--<p id="displayWorkdaysArray"></p>-->
+    <!--<script>
+        var workDays = ["Monday","Tuesday","Wednesday","Thursday","Friday"];
+    </script>-->
+    <!--15-->
+    <div>
+        <h1>15.</h1>
+        <p style="display:inline"><b>Displaying sorted numbers :</b><span id="displaySortedNumber"></span></p>
+        <br />
+    </div>
+
+
+    <!--18-->
+    <div>
+        <h1>18.</h1>
+        <form>
+            <p style="display:inline"> Your born year: </p>
+            <input id="entered_year18" type="number" />
+            <p style="display:inline"> Your born month: </p>
+            <input id="entered_month18" type="number" min="0" max="11" />
+            <input type="button" onclick="Days()" value="Submit" />
+        </form>
+        <p id="displayDays"></p>
+    </div>
+    <!--19-->
+    <div>
+        <h1>19.</h1>
+        <p style="display:inline"> Enter a number to convert in to minutes: </p>
+        <input id="entered_minutes" type="number" value="96" />
+        <input type="button" onclick="minutrsToHours()" value="Submit" />
+        <p id="display_Hours"></p>
+    </div>
+
+    <!--//20-->
+    <div>
+        <h1>20.</h1>
+        <form>
+            <p style="display:inline"> Your born year: </p>
+            <input id="entered_year" type="text" />
+            <input type="button" onclick="Age()" value="Submit" />
+        </form>
+        <p id="displayAge"></p>
+    </div>
+
+
+
+
+
+    <!--<script>//1
+        setInterval(Current_date, 1000);
+        function Current_date() {
+
+            var Current_time = new Date;
+            var C_year = Current_time.getFullYear(); // year
+            //month
+            var C_month = Current_time.getMonth();
+            C_month = (C_month < 10 ? "0" + C_month : C_month);
+            // date
+            var C_date = Current_time.getDate();
+            C_date = (C_date < 10 ? "0" + C_date : C_date);
+            //day
+            var day_array = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+            var C_day = day_array[Current_time.getDay()];
+
+            var C_time = Current_time.toLocaleTimeString();
+
+            document.getElementById("current_date").innerHTML = C_day + "," + "     " + C_year + "/" + C_month + "/" + C_date + "     " + C_time;
+        }
+    </script>
+    <script> //2
+     function leapyear() {
+             var value_fromHtMl = document.getElementById("input_year").value;
+
+         if (value_fromHtMl % 4 == 0 && value_fromHtMl % 100 == 0) {
+             if (value_fromHtMl % 400 == 0) {
+                  document.getElementById("isleapyear").innerHTML = "Leap year";
+             }
+         }
+         else if (value_fromHtMl % 100 == !0 || value_fromHtMl % 4 == 0 ) {
+                  document.getElementById("isleapyear").innerHTML = "Leap year";
+         }
+            else {
+                document.getElementById("isleapyear").innerHTML = "Not a leap year";
+            }
+        }
+    </script>
+    <script>//3
+        function isSunday() {
+
+            var Year_check_for_Sunday = document.getElementById("enteredYear").value;
+            var date_checked = new Date(Year_check_for_Sunday, 0); // 0 for January
+            var d1 = date_checked.getDay();
+            var day_array = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+
+            if (d1 == 0) {
+                document.getElementById("disply_is_Sunday").innerHTML = " January first of" + Year_check_for_Sunday + "is Sunday";
+            }
+            else {
+                document.getElementById("disply_is_Sunday").innerHTML = " January first of "+" "+ Year_check_for_Sunday +" "+"is not Sunday."+" " +"It is a"+ " " +day_array[d1];
+            }
+        }
+    </script>
+    <script>//4
+        function isNumber_Guess() {
+
+            var guessedNumber = document.getElementById("entered_guess_number").value;
+            var r = Math.floor(Math.random() * 10) + 1;
+            document.getElementById("display_random").innerHTML = r;
+
+            if (r == guessedNumber) {
+                document.getElementById("display_guess").innerHTML = " Guessed number is Correct";
+            } else {
+                document.getElementById("display_guess").innerHTML = " Guessed number is Wrong";
+            }
+        }
+    </script>
+    <script>//5
+        var currentDate = new Date();
+        var a = Date.parse(currentDate.toLocaleDateString());
+        var currentYear = currentDate.getFullYear();
+        var ChristmasDate = new Date(currentYear, 11, 25);
+        var b = Date.parse(ChristmasDate);
+        var Millisecon_in_24hours = 86400000;
+
+        document.getElementById("daysUntilChristmas").innerHTML = Math.round((b - a) / Millisecon_in_24hours);
+    </script>
+    <script>//6
+        function reverseSting() {
+            var str1 = document.getElementById("entered_String").value;
+
+            var strLen = str1.length;
+            var ar1 = new Array();
+            for (var i in str1) {
+                ar1[(strLen-1)-i] = str1[i];
+            }
+            var temp="", ar2="";
+            for (var j = 0; j < ar1.length; j++) {
+                ar2 = temp + ar1[j];
+                temp =ar2;
+            }
+            document.getElementById("displyReversesString").innerHTML = ar2;
+        }
+    </script>
+    <script>//7
+        function TextCombinations() {
+            var textForComb = document.getElementById("entered_combi").value;
+            var tex_len= textForComb.length;
+            var temp1 , temp2 ;
+            temp1 = textForComb;
+            var Array1 = [];
+
+            for (var i = 0; i < tex_len; i++) {
+                temp2 = temp1;
+                for (var j = i; j < temp2.length; j++) {
+                    Array1.push(temp2.slice(i, j+1));
+                }
+            }
+            document.getElementById("displyCombinations").innerHTML = Array1;
+        }
+    </script>
+    <script>//8
+        function WordSort() {
+
+        var enteredWord = document.getElementById("entered_word").value;
+        var Len = enteredWord.length;
+        var arr1 = new Array();
+        for (var i in enteredWord) {
+                arr1[(Len-1)-i] = enteredWord[i];
+            }
+            var arr2 = (arr1).sort();
+            var temp="", arr3="";
+            for (var j = 0; j < arr2.length; j++) {
+                arr3 = temp + arr2[j];
+                temp = arr3;
+            }
+            document.getElementById("displayWord").innerHTML = arr3;
+        }
+    </script>
+    <script> //9   
+        function manuplateSentence() {
+            var enteredSentence = document.getElementById("entered_sentence").value;
+            var ArrSent = enteredSentence.split(" ");
+
+
+            for (var i in ArrSent) {
+                ArrSent[i] = ArrSent[i].replace(ArrSent[i].substr(0, 1), ArrSent[i].substr(0, 1).toUpperCase());
+            }
+            var temp = "";
+            for (var j = 0; j < ArrSent.length; j++) {
+                temp = temp + " " + ArrSent[j];
+            }
+            document.getElementById("displaySentence").innerHTML = temp;
+        }
+    </script>
+    <script>//11
+        function FindTheType() {
+            var enterdText = document.getElementById("entered_text").value;
+
+            function type(a) {
+                return typeof a;
+            }
+            console.log(type(enterdText));
+        }
+    </script>
+    <script>//12
+        var result = [];
+        for (var i = 0; i < 15; i++) {
+            if (i % 2 == 0) {
+                result[i] = "\"" + i + " " + "is even" + "\"";
+            }
+            else {
+                result[i] = "\"" + i + " " + "is odd" + "\"";
+            }
+            var a = result;
+        }
+        var temp = "";
+        for (var j = 0; j < result.length; j++) {
+            temp = temp + " " + result[j];
+        }
+        document.getElementById("displayloop").innerHTML = temp;
+    </script>
+    
+    <script>//15
+        var number = [4, 1, 9, -2, 5];
+            document.getElementById("displaySortedNumber").innerHTML= number.sort(function(a,b) {return a - b });
+        
+    </script>
+    
+    <script>//18
+        function Days() {
+            var Y_18 = document.getElementById("entered_year18").value;
+            var M_18 = document.getElementById("entered_month18").value;
+            var Date18_1 = new Date(Y_18, M_18);
+            var a = Date.parse(Date18_1);
+            var M = Number(M_18) + 1;
+            var Date18_2 = new Date(Y_18, M);
+            var b = Date.parse(Date18_2);
+            var Millisecon_in_24hours = 86400000;
+
+            document.getElementById("displayDays").innerHTML = "The days are" + " " + ((b - a) / (Millisecon_in_24hours));
+        }
+    </script>
+    
+    <script>//19
+        function minutrsToHours() {
+            var n = document.getElementById("entered_minutes").value;
+            var h = Math.floor(n / 60);
+            var m = (n - h * 60);
+            document.getElementById("display_Hours").innerHTML = h + "hours" + " " + m + "minutes";
+        }
+    </script>
+    
+    <script>//20
+        function Age() {
+            var Y_20 = document.getElementById("entered_year").value;
+
+            var currentDate = new Date();
+            var a = Date.parse(currentDate.getFullYear());
+            var birthDate = new Date(Y_20);
+            var b = Date.parse(birthDate);
+            var Millisecon_in_24hours = 86400000;
+
+            document.getElementById("displayAge").innerHTML = "The age is" + " " + Math.round((a - b) / (Millisecon_in_24hours * 365));
+        }
+    </script>-->
+
+</body>
+</html>
